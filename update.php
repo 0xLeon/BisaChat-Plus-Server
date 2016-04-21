@@ -27,12 +27,14 @@ foreach ($scripts as $value) {
 }
 
 $updateInformation = array(
-	'newVersion' => false,
+	'updateAvailable' => false,
+	'version' => '',
 	'url' => ''
 );
 
 if (version_compare($latest, $inputVersion, '>')) {
-	$updateInformation['newVersion'] = true;
+	$updateInformation['updateAvailable'] = true;
+	$updateInformation['version'] = $latest;
 	$updateInformation['url'] = 'http://projects.0xleon.com/userscripts/bcplus/releases/BisaChat%20Plus%20' . rawurlencode($latest) . '.user.js';
 }
 
