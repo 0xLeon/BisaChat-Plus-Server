@@ -1,6 +1,6 @@
 <?php
 $inputVersion = (isset($_GET['version'])) ? $_GET['version'] : '0.0.0';
-$includeUnstable = (isset($_GET['unstable'])) ? (intval($_GET['unstable']) === 1) : false;
+$includeUnstable = (isset($_GET['unstable'])) ? ($_GET['unstable'] === 'true') : false;
 $scripts = glob('./releases/*.user.js', GLOB_MARK);
 $latest = '0.0.0';
 $rawVersion = '';
