@@ -55,6 +55,10 @@ $updateInformation = array(
 	'url' => ''
 );
 
+if (($i = strpos($inputVersion, '-')) !== false) {
+	$inputVersion = substr($inputVersion, 0, $i);
+}
+
 if (version_compare($latest, $inputVersion, '>')) {
 	$updateInformation['updateAvailable'] = true;
 	$updateInformation['version'] = $latest;
