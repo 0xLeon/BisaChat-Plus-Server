@@ -31,7 +31,7 @@ if (strtolower($_SERVER['HTTP_ORIGIN']) !== $allowOrigin) {
 }
 
 $inputVersion = (isset($_GET['version'])) ? $_GET['version'] : '0.0.0';
-$includeUnstable = (isset($_GET['unstable'])) ? ($_GET['unstable'] === 'true') : false;
+$includeUnstable = ((isset($_GET['unstable'])) ? ($_GET['unstable'] === 'true') : false) || (preg_match('/(dev|a|b|rc)/', $inputVersion) === 1);
 $scripts = glob('./releases/*.user.js', GLOB_MARK);
 $latest = '0.0.0';
 
