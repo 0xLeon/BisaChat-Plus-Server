@@ -12,7 +12,7 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
 	}
 }
 else {
-	@header($_SERVER['SERVER_PROTOCOL'] . '400 Bad Request');
+	@header($_SERVER['SERVER_PROTOCOL'] . ' 400 Bad Request');
 	exit(0);
 }
 
@@ -26,7 +26,7 @@ if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD'])) {
 }
 
 if (strtolower($_SERVER['HTTP_ORIGIN']) !== $allowOrigin) {
-	@header($_SERVER['SERVER_PROTOCOL'] . '403 Forbidden');
+	@header($_SERVER['SERVER_PROTOCOL'] . ' 403 Forbidden');
 	exit(0);
 }
 
